@@ -1,15 +1,15 @@
 // Elements
-const image = getElem('img');
-const title = getElem('#title');
-const artist = getElem('#artist');
-const music = getElem('audio');
-const progressContainer = getElem('#progress-container');
-const progress = getElem('#progress');
-const currentTimeEl = getElem('#current-time');
-const durationEl = getElem('#duration');
-const prevBtn = getElem('#prev');
-const playBtn = getElem('#play');
-const nextBtn = getElem('#next');
+const image = getElem("img");
+const title = getElem("#title");
+const artist = getElem("#artist");
+const music = getElem("audio");
+const progressContainer = getElem("#progress-container");
+const progress = getElem("#progress");
+const currentTimeEl = getElem("#current-time");
+const durationEl = getElem("#duration");
+const prevBtn = getElem("#prev");
+const playBtn = getElem("#play");
+const nextBtn = getElem("#next");
 
 // Counter for current song
 let currentSong = 0;
@@ -17,24 +17,74 @@ let currentSong = 0;
 // Music
 const songs = [
   {
-    name: 'jacinto-1',
-    displayName: 'Electric Chill Machine',
-    artist: 'Jacinto Design',
+    name: "song-1",
+    displayName: "Electric Chill Machine",
+    artist: "Jacinto Design",
   },
   {
-    name: 'jacinto-2',
-    displayName: 'Seven nation Army (Remix)',
-    artist: 'Jacinto Design',
+    name: "song-2",
+    displayName: "Seven nation Army (Remix)",
+    artist: "Jacinto Design",
   },
   {
-    name: 'jacinto-3',
-    displayName: 'Goodnight, Disco Queen',
-    artist: 'Jacinto Design',
+    name: "song-3",
+    displayName: "Goodnight, Disco Queen",
+    artist: "Jacinto Design",
   },
   {
-    name: 'metric-1',
-    displayName: 'Front Row (Remix)',
-    artist: 'Metric/Jacinto Design',
+    name: "song-4",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-5",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-6",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-7",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-8",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-9",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-10",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-11",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-12",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-13",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
+  },
+  {
+    name: "song-14",
+    displayName: "Front Row (Remix)",
+    artist: "Metric/Jacinto Design",
   },
 ];
 
@@ -49,16 +99,16 @@ function getElem(id) {
 // Function to Play Song
 function playSong() {
   isPlaying = true;
-  playBtn.classList.replace('fa-play', 'fa-pause');
-  playBtn.setAttribute('title', 'Pause');
+  playBtn.classList.replace("fa-play", "fa-pause");
+  playBtn.setAttribute("title", "Pause");
   music.play();
 }
 
 // Function to pause Song
 function pauseSong() {
   isPlaying = false;
-  playBtn.classList.replace('fa-pause', 'fa-play');
-  playBtn.setAttribute('title', 'Play');
+  playBtn.classList.replace("fa-pause", "fa-play");
+  playBtn.setAttribute("title", "Play");
   music.pause();
 }
 
@@ -128,40 +178,19 @@ function previousSong() {
 loadSong(songs[currentSong]);
 
 // Play or Pause Event Listener
-playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
+playBtn.addEventListener("click", () => (isPlaying ? pauseSong() : playSong()));
 
 // Skip event listener
-nextBtn.addEventListener('click', nextSong);
+nextBtn.addEventListener("click", nextSong);
 
 // Previous event listener
-prevBtn.addEventListener('click', previousSong);
+prevBtn.addEventListener("click", previousSong);
 
 // Update progress bar
-music.addEventListener('timeupdate', updateProgress);
+music.addEventListener("timeupdate", updateProgress);
 
 // Play the next song when the song ends
-music.addEventListener('ended', nextSong);
+music.addEventListener("ended", nextSong);
 
 // Click on progress bar to search through the song
-progressContainer.addEventListener('click', setProgressBar);
-
-
-
-
-// const url =
-//   "https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=5";
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "defb688541msh7edcc1c5645da40p108b01jsn50d4dd013660",
-//     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-//   },
-// };
-
-// try {
-//   const response = await fetch(url, options);
-//   const result = await response.text();
-//   console.log(result);
-// } catch (error) {
-//   console.error(error);
-// }
+progressContainer.addEventListener("click", setProgressBar);
